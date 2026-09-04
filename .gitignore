@@ -1,0 +1,27 @@
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Editor settings and temporary files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Local working material
+private/
+restricted/
+raw-data/
+exports/
+*.tmp
+*.bak
+
+# Environment files
+.env
+.env.*
+
+# Generated output
+site/
+build/
+dist/
