@@ -74,13 +74,13 @@ The submittal requires site measurements. Those measurements require installatio
 S \geq G
 \]
 
-Observed access processing for non-U.S. personnel routinely exceeds 30 calendar days in the stated population:
+If access processing extends beyond the contractual 30-day interval in the stated population:
 
 \[
 G > A + 30
 \]
 
-Preparation and routing can finish only after the site event, which means the earliest feasible submission \(E\) is later than the contractual deadline:
+and preparation and routing can finish only after the site event, then the earliest feasible submission \(E\) is later than the contractual deadline:
 
 \[
 E > S \geq G > D
@@ -89,6 +89,22 @@ E > S \geq G > D
 The deadline engine therefore records the award-based due date while showing that the `ACCESS_GRANT` and `SITE_EVENT` prerequisites remain unanchored. The alert layer identifies the dependency conflict before access occurs. The engine does not invent an access date or redefine the contractual due date.
 
 The appropriate resolution requires a documented contractual, sequencing, access, or scope decision by the responsible parties. The instrument records that decision and recomputes affected dates after a valid anchor or rule change is entered.
+
+This is a formalized observation of a requirements conflict in the studied setting. It does not establish how frequently the pattern occurs across federal construction and should not be presented as a general causal finding without broader validation.
+
+## Review-aging observation
+
+The same engine can distinguish contractor preparation time from post-submission waiting time. At the 11 September 2026 research snapshot, **11 tracked items had been pending more than 14 days and the oldest had been pending 66 days**, against a contractual one-work-week response obligation in the studied context.
+
+For a submitted item, the review-age quantity is:
+
+\[
+R = T - S
+\]
+
+where \(R\) is elapsed review age, \(S\) is the recorded submission/receipt anchor, and \(T\) is the observation date when no decision has yet been recorded.
+
+A review-aging alert does not assign fault. Formal analysis must preserve the responsible actor, contractual timing rule, any acknowledgment or intermediate response, and any intervening dependency before attributing delay.
 
 ## Alerts
 
