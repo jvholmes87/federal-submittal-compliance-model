@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this research artifact, please cite it using the metadata in this file."
+title: "Federal Submittal Compliance Model"
+type: software
+authors:
+  - family-names: Holmes
+    given-names: "Jason V."
+    orcid: "https://orcid.org/0009-0007-2898-8478"
+version: 0.1.0
+date-released: 2026-09-11
+url: "https://github.com/jvholmes87/federal-submittal-compliance-model"
+repository-code: "https://github.com/jvholmes87/federal-submittal-compliance-model"
+license: CC-BY-4.0
+keywords:
+  - federal construction
+  - requirements traceability
+  - submittal compliance
+  - lifecycle state modeling
+  - systems engineering
+  - acquisition

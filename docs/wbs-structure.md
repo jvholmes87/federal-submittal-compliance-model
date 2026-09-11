@@ -18,7 +18,7 @@ The deployed instrument began as an approximately 60-gate template. The verified
 | `4000` Warranty | `4010–4050` | 5 | Warranty-period inspections, corrective obligations, renewal-sensitive items, and final discharge |
 | **Total** |  | **61** | Current verified baseline |
 
-Payment is a recurring gate within the Construction band. It is not a separate phase band. Closeout remains one of the six deployed phase bands and is not represented by the previously proposed `9000–9999` structure.
+Payment is a recurring gate within the Construction band. It is not a separate phase band. Closeout remains one of the six deployed phase bands and is not represented by a separate `9000–9999` structure.
 
 ## Numbering scheme
 
@@ -41,7 +41,7 @@ Each instantiated gate contains or references the following fields:
 | Anchor event | Identifies the event from which a deadline is derived |
 | Due date | Stores or computes the obligation deadline when an anchor exists |
 | Evidence reference | Points to the filed artifact used to establish status or satisfaction |
-| Rejection counter | Records the number of government rejection and cure cycles |
+| Rejection counter | Records government rejection and cure cycles where applicable |
 | Expiry date | Supports `Expiring` and `Expired` controls for time-limited approvals |
 
 ## Gate satisfaction
@@ -75,17 +75,21 @@ All instantiated gates use the same deployed state vocabulary, with permitted st
 
 `Prime Review` is required when the subcontractor must route an artifact through the prime contractor before government submission. This state prevents the model from conflating contractor preparation, prime approval or signature, and government receipt.
 
-`Rejected` and `Approved` are reserved for adjudicated submittal gates. An administrative item returned by the recipient moves from `Pending` to `In Prep` without incrementing the rejection counter. This gate-type constraint defines eligibility for the first-pass approval denominator.
+`Rejected` and `Approved` are reserved for adjudicated submittal gates. An administrative item returned by the recipient moves from `Pending` to `In Prep` without incrementing the rejection counter. This gate-type constraint is important for measurement validity.
 
 `Expiring` and `Expired` apply only to time-limited approvals. These states support permits, passes, and recurring certifications whose validity can lapse after closure.
 
 ## Metric implications
 
-Gate type is part of the metric definition. Administrative, recurring, and true submittal rows cannot be placed in one approval-rate denominator without changing the meaning of the measure.
+Gate type and unit of analysis are part of the metric definition. Administrative, recurring, true submittal rows, package-level outcomes, and line-item outcomes cannot be placed in one approval-rate denominator without changing the meaning of the measure.
 
-The earlier dashboard calculation used all adjudicated gate rows and produced 17 percent. The corrected first-pass approval metric includes only adjudicated submittal-type rows. At the 3 September 2026 snapshot, the corrected rate was 43 percent, defined as 3 first-pass approvals among 7 adjudicated submittal rows.
+At the 11 September 2026 research snapshot, first-pass submittal approval was **69 percent by line item (20 of 29 dispositioned line items)** and **47 percent by package (8 of 17 packages)**. These metrics must be reported separately.
 
-This correction is a metric-validity finding from the deployed instrument. It shows that gate typing and denominator rules must be enforced in the data model. The result is limited to the stated population, definition, denominator, and snapshot date.
+The dashboard's **85 percent current-state gate approval share** is not a first-pass metric. It describes the current state distribution of approval-eligible gates.
+
+A 3 September 2026 gate-row snapshot reported **43 percent (3 of 7)** under an earlier gate-row adjudication definition. It is retained only as a dated historical measurement. The earlier **17 percent** dashboard figure is superseded and retained only as a measurement-design error because it mixed administrative gates with approval-eligible submittals.
+
+These figures do not establish improvement over time because the definitions, units, and populations differ. A longitudinal analysis must use one stable eligibility rule and unit of analysis across observations.
 
 ## Change control
 
@@ -95,4 +99,4 @@ Template version and project instantiation are separate concepts. A project reta
 
 ## Sanitization
 
-This public structure omits gate titles or descriptions that could identify a project, task order, contract, contractor, government personnel member, installation, country, unit, dollar value, or project date. It contains no controlled unclassified information, government forms, reviewer comments, or correspondence.
+This public structure omits gate titles or descriptions that could identify a project, task order, contract, contractor, government personnel member, installation, country, unit, dollar value, or identifying project date. It contains no controlled unclassified information, government forms, reviewer comments, or correspondence.
